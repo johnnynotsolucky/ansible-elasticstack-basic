@@ -1,0 +1,19 @@
+---
+- hosts: all
+  roles:
+    - role: prep
+      become: true
+    - role: geerlingguy.java
+      become: yes
+    - role: geerlingguy.elasticsearch
+      become: yes
+    - role: geerlingguy.logstash
+      become: yes
+    - role: geerlingguy.nginx
+      become: yes
+    - role: geerlingguy.kibana
+      become: yes
+    - role: ufw
+      become: true
+    # - role: geerlingguy.certbot
+    #   become: yes

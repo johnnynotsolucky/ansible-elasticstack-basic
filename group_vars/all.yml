@@ -1,0 +1,13 @@
+---
+# server_name:
+
+elasticsearch_version: "7.x"
+
+kibana_version: "7.x"
+kibana_config_template: kibana/kibana.yml.j2
+
+logstash_version: "7.x"
+
+nginx_vhosts:
+  - server_name: "{{ server_name }}"
+    template: "{{ playbook_dir }}/templates/nginx/site.conf.j2"

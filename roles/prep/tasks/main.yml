@@ -1,0 +1,13 @@
+---
+- name: Update all packages
+  become: yes
+  apt:
+    upgrade: dist
+    update_cache: yes
+    cache_valid_time: 3600
+
+- become: yes
+  apt:
+    pkg:
+      - software-properties-common
+    state: present
